@@ -6,7 +6,7 @@ require 'rails_helper'
 RSpec.describe "US Code API", :type => :feature do
 
 #goes to page and takes in requests for information 
-  it "Goes to Us Code API page, takes in request and outputs data" do
+  it "Takes in request and outputs data" do
    
   end
 end

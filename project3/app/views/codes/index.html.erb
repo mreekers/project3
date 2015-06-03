@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Court Helper</title>
+</head>
+<body>
+
+   <div class="container">
+        <div class="row">
+            <div class="col-xs-12"> 
+                <h1 id="bob"> US Federal Codes</h1>
+       </div>
+        </div>
+    </div>
+
+    <a href="/home/index">Home</a><br>
+    <br><a href="/ca_law/index">Ca Law Search</a><br>
+
+    <br><%= form_tag("/codes", method: "get") do %>
+        <%= label_tag(:q, "Search for:") %>
+        <%= text_field_tag(:q) %>
+        <%= submit_tag("Search") %>
+    <% end %>
+
+ 
+
+</body>
+</html>
