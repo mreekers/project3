@@ -3,18 +3,14 @@ class CodesController < ApplicationController
 
 
     def index
-        @response = Typhoeus.get "https://community-united-states-code.p.mashape.com/US_Code/usc01_113-21.json",
+
+        response = Unirest.get "https://community-united-states-code.p.mashape.com/US_Code/usc01_113-21.json",
             headers:{
                 "X-Mashape-Key" => "0i9u6YbElXmshSiPOQupOS2HPs4ip1nKxPJjsnM0d37Os3dtLx",
                 "Accept" => "text/plain"
         }
-
-
-
-
-
-
         
+        puts response.body["mainText"];
         # hash = JSON.parse(response.body)
         # respond_to do |format|
         #   format.html index.html.erb
@@ -27,10 +23,16 @@ class CodesController < ApplicationController
         # # These code snippets use an open-source library.
             # @response = Typhoeus.get("https://community-united-states-code.p.mashape.com/US_Code/usc01_113-21.json", params: {s: search})
             # @codes = JSON.parse(response.body)["Search"]
-            # render json: {message: 'Resource not found'}, status: 404
+            # render json: {message: 'Resource not found'}, status: 404 
         
     end
 end
 
 # response = Typhoeus.get("https://community-united-states-code.p.mashape.com/US_Code/usc01_113-21.json")
 
+    def post 
+        @response = Unirest.post "https://community-united-states-code.p.mashape.com/US_Code/usc01_113-21.json",
+            headers:{
+                "Accept" => "application/json"
+        }
+    end
