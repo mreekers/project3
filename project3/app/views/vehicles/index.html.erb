@@ -9,15 +9,15 @@
    <div class="container">
         <div class="row">
             <div class="col-xs-12"> 
-                <h1 id="bob"> US Federal Codes</h1>
+                <h1 id="bob"> CA Vehicle Code</h1>
        </div>
         </div>
     </div>
 
     <a href="/home/index">Home</a><br>
-    <br><a href="/ca_law/index">Ca Law Search</a><br>
+    <br><a href="/crims">Ca Penal Code</a><br>
 
-    <br><%= form_tag("/codes", method: "get") do %>
+    <br><%= form_tag("/crims", method: "get") do %>
         <%= label_tag(:q, "Search for:") %>
         <%= text_field_tag(:q) %>
         <%= submit_tag("Search") %>

@@ -1,28 +1,21 @@
-== README
+Leftover Notes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Form that was in the crims/index.html.erb 
+ <br><%= form_tag("/crims", method: "get") do %>
+        <%= label_tag(:q, "Search for:") %>
+        <%= text_field_tag(:q) %>
+        <%= submit_tag("Search") %>
+    <% end %>
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+<%= @crims.each do |crim| %>
+  <div class="crim">
+    <h1 class="crim-statute"><%= link_to crim.statute, crim %></h1>
+    <p class="crim-juryinst"><%= crim.juryinst %></p>
+  </div>
+<% end %>
+
+<% @crim.each do |crim| %>
+        <%= render partial: 'crim', locals: {crim: crim} %>
+    <% end %>
