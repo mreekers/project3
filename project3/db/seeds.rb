@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+#lets not use faker unless our own DB doesn't work for some reason
+
+# puts "Creating 'crims'"
+# 500.times do
+#   Crim.create(name: Faker::Name.statute)
+# end

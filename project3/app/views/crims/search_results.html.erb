@@ -1,0 +1,6 @@
+  <ul>
+    <% @crims.each do |crim| %>
+  <li><%= link_to crim.statute, 
+    :action => 'show', :id => crim.id  %></li>
+  <% end %>
+  </ul>

@@ -1,7 +1,20 @@
-<div class="crim">
+<!-- <div class="crim">
  <h4><%= crim.statute %> </h4>
  <h5>Jury Instructions:</h5>
  <italic><%= crim.juryinst %></italic>
  <h5>Notes:</h5>
  <italic><%= crim.notes %></italic>
-</div>
+</div> -->
+
+<% if crims %>
+  <% crims.each do |crim| %>
+  <tr>
+    <td><%= post.name %></td>
+    <td><%= post.category.name %></td>
+    <td><%= post.description %></td>
+    <td><%= post.flag %></td>
+  </tr>
+  <% end %>
+<% else %>
+  <tr><td>No posts</td></tr>
+<% end %>

@@ -6,22 +6,26 @@ class CrimsController < ApplicationController
     # validate :juryinst, presence: true
     # validate :notes, presence: true
 
-    def search
-        @crims = Crim.search(params[:search])
-    end
+    # def search
+    #     @crims = Crim.search(params[:search])
+
+    #     if params[:search]
+    #         @crims = Crim.search(:all, :conditions => ['statute LIKE ?',"%#{params[:search]}%"])
+    #     else
+    #         @crims = Crim.search(:all)
+    #     end
+    # end
 
     def index
+
         @crims = Crim.all
+       
+        # @crims = Crim.search(params[:search])
+    end
 
+    def new
+        @crim = Crim.new
 
-      #   if params[:search].present? || params[:radius].present?
-      #       search = Crim.search do
-      #           fulltext params[:search]
-      #   end
-      #   @crim = search.results
-      # else
-      #   @crim = []
-      #   end
     end
 
     def show
@@ -30,9 +34,14 @@ class CrimsController < ApplicationController
 
     def create
         @crim = Crim.new(params.require(:crim).permit(:statute, :juryinst, :notes))
- 
+        
         @crim.save
-        redirect_to @crim
+        if @crim.save
+            redirect_to :action => 'show', :id => @crim
+        else
+            render :action => 'new'
+        end
+        # redirect_to @crim
     end
 
     def destroy
@@ -49,3 +58,14 @@ private
     end
 
 end
+
+
+
+
+ #   if params[:search].present? || params[:radius].present?
+      #       search = Crim.search do
+      #           fulltext params[:search]
+      #   end
+      #   @crim = search.results
+      # else
+      #   @crim = []
