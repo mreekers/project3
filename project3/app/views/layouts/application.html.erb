@@ -5,15 +5,18 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+<%= render 'shared/navbar' %>
 </head>
-<body>
-    <%= render 'shared/navbar' %>
 
-        <%=form_tag search_results_path, :method => 'get' do%>
+<body>
+    
+
+        <%=form_tag crims_path, :method => 'get' do%>
         <%=text_field_tag :search, params[:search]%>
         <button type="submit" class="btn">Search</button>
     <%end%>
     </form>
+
 
 
     <%= yield %>

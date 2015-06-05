@@ -1,5 +1,17 @@
 Leftover Notes
 
+  <% @crims.each do |crim| %>
+  <tr>
+    <br>
+    <td><%= crim.statute %></td>
+    <td><%= crim.juryinst %></td>
+    <td><%= crim.notes %></td>
+    
+  </tr>
+  <% end %>
+
+
+
 
 <br><%= form_tag("/crims", method: "get") do %>
         <%= label_tag(:q, "Search for:") %>

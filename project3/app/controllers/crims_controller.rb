@@ -2,25 +2,20 @@
 class CrimsController < ApplicationController
     attr_accessor :statute, :juryinst, :notes
  
-    # validate :statute, presence: true, uniqueness: true
-    # validate :juryinst, presence: true
-    # validate :notes, presence: true
+ 
 
-    # def search
-    #     @crims = Crim.search(params[:search])
+    def search
+        
 
-    #     if params[:search]
-    #         @crims = Crim.search(:all, :conditions => ['statute LIKE ?',"%#{params[:search]}%"])
-    #     else
-    #         @crims = Crim.search(:all)
-    #     end
-    # end
+        
+    end
 
     def index
 
-        @crims = Crim.all
+        # @crims = Crim.all
        
-        # @crims = Crim.search(params[:search])
+        @crims = Crim.search(params[:search])
+       
     end
 
     def new
@@ -58,14 +53,3 @@ private
     end
 
 end
-
-
-
-
- #   if params[:search].present? || params[:radius].present?
-      #       search = Crim.search do
-      #           fulltext params[:search]
-      #   end
-      #   @crim = search.results
-      # else
-      #   @crim = []

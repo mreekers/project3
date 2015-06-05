@@ -9,10 +9,10 @@
 <% if crims %>
   <% crims.each do |crim| %>
   <tr>
-    <td><%= post.name %></td>
-    <td><%= post.category.name %></td>
-    <td><%= post.description %></td>
-    <td><%= post.flag %></td>
+    <td><%= crim.statute %></td>
+    <td><%= crim.juryinst %></td>
+    <td><%= crim.notes %></td>
+    
   </tr>
   <% end %>
 <% else %>
