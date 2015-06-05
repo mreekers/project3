@@ -13,6 +13,8 @@ get '/vehicles', to: 'vehicles#index'
 
 get '/crims/search', to: 'crims#search'
 
+post '/crims/new', to: 'crims#create'
+
 resources :home
 
 resources :crims

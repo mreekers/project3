@@ -6,19 +6,18 @@ class CrimsController < ApplicationController
 
     def search
         
-
-        
     end
 
     def index
 
-        # @crims = Crim.all
+        # @crim = Crim.all
        
         @crims = Crim.search(params[:search])
        
     end
 
     def new
+        @crims = Crim.all
         @crim = Crim.new
 
     end
