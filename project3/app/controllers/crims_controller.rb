@@ -42,7 +42,7 @@ class CrimsController < ApplicationController
         @crim = Crim.find(params[:id])
         @crim.destroy
  
-        redirect_to crims_path
+        redirect_to root_path
     end
 
 
