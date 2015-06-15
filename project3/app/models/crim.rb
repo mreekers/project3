@@ -8,7 +8,7 @@ class Crim < ActiveRecord::Base
         if search
             where('statute LIKE ?', "%#{search}%")
         else
-            find(:all)
+            where(:all)
         end
 
         # find(:all, :conditions => ['crims.statute LIKE ? OR crims.juryinst LIKE ? or crims.notes like ?', "%#{search}%"])

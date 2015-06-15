@@ -9,17 +9,17 @@
 </head>
 
 <body>
-    
-
+      <div style="text-align:center;">
         <%=form_tag crims_path, :method => 'get' do%>
         <%=text_field_tag :search, params[:search]%>
         <button type="submit" class="btn">Search</button>
+      </div>    <br>
     <%end%>
+
     </form>
-
-
 
     <%= yield %>
 
 </body>
 </html>
+

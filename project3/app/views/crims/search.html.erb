@@ -1,16 +1,12 @@
-<h1>Results Here</h1> 
+<h1>Results Located</h1> 
 
-<p>
-  <strong>Statute:</strong>
-  <%= @crim.statute %>
-</p>
- 
-<p>
-  <strong>JuryInst:</strong>
-  <%= @crim.juryinst %>
-</p>
-
-<p>
-    <strong>Notes:</strong>
-    <%= @crim.notes %>
-</p>
+<% @crims.each do |crim| %>
+    <tr>
+      <br>
+      <td><%= crim.statute %></td>
+      <td><%= crim.juryinst %></td>
+      <td><%= crim.notes %></td>
+      <td><%= link_to 'Destroy', crim_path(crim), method: :delete %></td>
+    </tr>
+  <% end %>
+    

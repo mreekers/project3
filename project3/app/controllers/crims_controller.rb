@@ -6,19 +6,18 @@ class CrimsController < ApplicationController
 
     def search
         
-
-        
     end
 
     def index
 
-        # @crims = Crim.all
+        # @crim = Crim.all
        
         @crims = Crim.search(params[:search])
        
     end
 
     def new
+        @crims = Crim.all
         @crim = Crim.new
 
     end
@@ -43,7 +42,7 @@ class CrimsController < ApplicationController
         @crim = Crim.find(params[:id])
         @crim.destroy
  
-        redirect_to crims_path
+        redirect_to root_path
     end
 
 

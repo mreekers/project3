@@ -6,9 +6,6 @@
 </head>
 <body>
 
-
-    
-
    <div class="container">
         <div class="row">
             <div class="col-xs-12"> 
@@ -17,40 +14,17 @@
         </div>
     </div>
 
-    <a href="/home/index">Home</a><br>
-    <br><a href="/vehicles">Ca Vehicle Code</a><br>
-
-     <%= form_for :crim, method: :post do |f| %>
-  <p>
-    <%= f.label :statute %><br>
-    <%= f.text_field :statute %>
-  </p>
- 
-  <p>
-    <%= f.label :juryinst %><br>
-    <%= f.text_area :juryinst %>
-  </p>
-
-  <p>
-    <%= f.label :notes %><br>
-    <%= f.text_area :notes %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
-
-
+<div class="container" style="text-align:center">
 <% @crims.each do |crim| %>
     <tr>
       <br>
-      <td><%= crim.statute %></td>
-      <td><%= crim.juryinst %></td>
-      <td><%= crim.notes %></td>
-      <td><%= link_to 'Destroy', crim_path(crim), method: :delete %></td>
+      <td>Statute: <%= crim.statute %></td><br>
+      <br><td>Jury Instructions: <%= crim.juryinst %></td><br>
+      <br><td>Notes: <%= crim.notes %></td><br>
+      <br><td><%= link_to 'Destroy', crim_path(crim), method: :delete %></td><br>
     </tr>
   <% end %>
+</div>
     
 
 
